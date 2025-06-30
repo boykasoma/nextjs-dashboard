@@ -44,7 +44,6 @@ export async function GET() {
   try {
     const client = await db.connect();
     const result = await seedPosts(client);
-    await client.end();
     
     return NextResponse.json({
       message: 'Database seeded successfully',
